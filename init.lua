@@ -78,8 +78,8 @@ function reloadConfig(paths)
 end
 
 -- Automatic Operations =======================================
-hsConfigFileWatcher = hs.pathwatcher.new(os.getenv("HOME") .. "/.", reloadConfig)
-hsConfigFileWatcher:start()
+-- hsConfigFileWatcher = hs.pathwatcher.new(os.getenv("HOME") .. "/.", reloadConfig)
+-- hsConfigFileWatcher:start()
 
 screenWatcher = screen.watcher.new(reloadScreens)
 screenWatcher:start()
