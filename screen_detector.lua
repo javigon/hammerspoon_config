@@ -16,12 +16,12 @@ screenWatcher = nil
 function reloadScreens()
 	nscreens = #screen.allScreens()
 
-	-- if work_layout_present == 1 then
+	if work_layout_present == 1 then
 		if nscreens_old ~= nscreens then
 			defineLayout()
 			applyLayout(work_layout)
 		end
-	-- end
+	end
 
 	-- FIXME: We should really be calling a function here that destroys and
 	-- re-creates the statuslets, in case they need to be in new places
