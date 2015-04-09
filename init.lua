@@ -92,9 +92,9 @@ defineLayout()
 	hotkey.bind(mashshift, "R", hs.reload)
 
 -- Key bindings ===============================================
-	hotkey.bind(mashshift, 'F', function() clApplyLayout(work_layout) end)
+	hotkey.bind(mashshift, 'F', function() applyLayout(work_layout) end)
+	hotkey.bind(mashshift, 'D', function() launchApp(work_layout) end)
 	hotkey.bind(mashshift, 'G', function() reloadScreens() end)
-	hotkey.bind(mashshift, "B", function() tiling.cyclelayout() end)
 
 	hotkey.bind(mashshift, ';', saveFocus)
 	hotkey.bind(mashshift, "'", focusSaved)

@@ -17,7 +17,6 @@ require "screen_detector"
 
 display_primary = 1
 display_secondary = 2
-work_layout_present = 0
 work_layout = {}
 
 -- 1 screen
@@ -115,7 +114,12 @@ function applyLayout(layout)
 	end
 end
 
-function clApplyLayout(layout)
-	applyLayout(layout)
-	work_layout_present = 1
+function launchApp(layout)
+	for n,_row in pairs(layout) do
+		local appName = _row[1]
+		local appExists = application.launchOrFocus(appName)
+		if not appExists then
+			alert.show("Application: ".. appName .." does not exist", 1)
+		end
+	end
 end
