@@ -3,12 +3,12 @@
 --
 
 -- Load Extensions ============================================
-   local alert = hs.alert
-
 screen = hs.screen
 screens = screen:allScreens()
 nscreens = #screens
 nscreens_old = nscreens
+
+local alert = hs.alert
 
 screenWatcher = nil
 
@@ -19,14 +19,14 @@ function reloadScreens()
 	if nscreens_old ~= nscreens then
 		defineLayout()
 		applyLayout(work_layout)
+
+		-- FIXME: We should really be calling a function here that destroys and
+		-- re-creates the statuslets, in case they need to be in new places
+
+		nscreens_old = nscreens
+
+		alert.show("New number of screens: " .. nscreens, 3)
 	end
-
-	-- FIXME: We should really be calling a function here that destroys and
-	-- re-creates the statuslets, in case they need to be in new places
-
-	lastNumberOfScreens = newNumberOfScreens
-
-	alert.show("New number of screens: " .. nscreens, 3)
 
 end
 
