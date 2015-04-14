@@ -23,6 +23,7 @@ local screen = hs.screen
 local hints = hs.hints
 local appfinder = hs.appfinder
 local layout = hs.layout
+local applescript = hs.applescript
 
 -- Load own extensions ========================================
 require "layouts"
@@ -61,6 +62,8 @@ function focusSaved()
 	end
 end
 
+-- Application specific ======================================
+
 function reloadConfig(paths)
 	doReload = false
 	for _,file in pairs(paths) do
@@ -77,6 +80,17 @@ function reloadConfig(paths)
 	hs.reload()
 end
 
+function loadItermProfile()
+	applescript.applescript(
+		"tell application \"iTerm\" \
+			activate \
+			tell (make new terminal) \
+				launch session \"uHalley\" \
+			end tell \
+		end tell"
+		)
+end
+
 -- Automatic Operations =======================================
 -- hsConfigFileWatcher = hs.pathwatcher.new(os.getenv("HOME") .. "/.", reloadConfig)
 -- hsConfigFileWatcher:start()
@@ -89,6 +103,7 @@ defineLayout()
 -- Launch Applications ========================================
 	hotkey.bind(cmdshift, "T", function() application.launchOrFocus("iTerm") end)
 	hotkey.bind(cmdshift, "A", function() application.launchOrFocus("Alfred 2") end)
+	hotkey.bind(cmdshift, 'N', function() loadItermProfile() end)
 	hotkey.bind(mashshift, "R", hs.reload)
 
 -- Key bindings ===============================================
