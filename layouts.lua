@@ -90,9 +90,9 @@ function applyLayout(layout)
 		local window = _row[2]
 		local scr = _row[3]
 		local pos = _row[4]
-		local appExists = application.launchOrFocus(appName)
+		-- local appExists = application.launchOrFocus(appName)
 		local app = nil
-		if appExists then
+		-- if appExists then
 			-- while not app do
 				app = appfinder.appFromName(appName)
 				-- alert.show("- App: " .. appName, 1)
@@ -110,7 +110,7 @@ function applyLayout(layout)
 					-- test("Slack")
 				end
 			-- end
-		end
+		-- end
 	end
 end
 
