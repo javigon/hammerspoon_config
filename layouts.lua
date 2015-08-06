@@ -40,6 +40,8 @@ communication_layout_2 = {
 	{"Slack", nil, display_primary, godownright_omnifocus},
 	{"Adium", "Contacts", display_primary, goupright_adium_contact},
 	{"Adium", "Timeline", display_primary, goupright_adium_chat},
+	{"Evernote", nil, display_secondary, gobig},
+	{"Spotify", nil, display_primary, gobig},
 }
 
 productivity_layout_2 = {
