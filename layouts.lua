@@ -30,6 +30,8 @@ communication_layout_1 = {
 
 productivity_layout_1 = {
 	{"OmniFocus", nil, display_primary, gobig},
+	{"RescueTime", nil, display_primary, gomiddle},
+	{"Pomodoro Timer", nil, display_primary, gomiddle},
 }
 
 -- 2 screens
@@ -42,10 +44,14 @@ communication_layout_2 = {
 	{"Adium", "Timeline", display_primary, goupright_adium_chat},
 	{"Evernote", nil, display_secondary, gobig},
 	{"Spotify", nil, display_primary, gobig},
+	{"RescueTime", nil, display_primary, gomiddle},
+	{"Leaf", nil, display_primary, gomiddle},
 }
 
 productivity_layout_2 = {
 	{"OmniFocus", nil, display_primary, goleft_omnifocus},
+	{"RescueTime", nil, display_primary, gomiddle},
+	{"Pomodoro Timer", nil, display_primary, gomiddle},
 }
 
 function defineLayout()
