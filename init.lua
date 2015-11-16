@@ -141,4 +141,3 @@ defineLayout()
 	hotkey.bind(mashshift, 'T', function() alert.show(os.date("%A %b %d, %Y - %I:%M%p"), 4) end)
 
 	alert.show("Hammerspoon, at your service.", 3)
-	alert.show(nscreens, 3)
