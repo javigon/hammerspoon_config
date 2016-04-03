@@ -21,17 +21,15 @@ work_layout = {}
 
 -- 1 screen
 communication_layout_1 = {
-	{"Calendar", nil, display_primary, goleft},
+	{"Calendar", nil, display_primary, goupleft},
 	{"Skype", nil, display_primary, godownleft},
 	{"Mail", nil, display_primary, gobig},
 	{"Slack", nil, display_primary, godownright},
-	{"Adium", nil, display_primary, godownleft},
 }
 
 productivity_layout_1 = {
 	{"OmniFocus", nil, display_primary, gobig},
 	{"RescueTime", nil, display_primary, gomiddle},
-	{"Pomodoro Timer", nil, display_primary, gomiddle},
 }
 
 -- 2 screens
