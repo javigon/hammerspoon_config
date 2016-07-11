@@ -83,10 +83,7 @@ end
 function loadItermProfile()
 	applescript.applescript(
 		"tell application \"iTerm\" \
-			activate \
-			tell (make new terminal) \
-				launch session \"uHalley\" \
-			end tell \
+		create window with profile \"uHalley\" \
 		end tell"
 		)
 end
