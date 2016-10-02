@@ -88,6 +88,14 @@ function loadItermProfile()
 		)
 end
 
+function loadItermProfileLocal()
+	applescript.applescript(
+		"tell application \"iTerm\" \
+		create window with profile \"Default\" \
+		end tell"
+		)
+end
+
 -- Automatic Operations =======================================
 -- hsConfigFileWatcher = hs.pathwatcher.new(os.getenv("HOME") .. "/.", reloadConfig)
 -- hsConfigFileWatcher:start()
@@ -101,15 +109,22 @@ defineLayout()
 	hotkey.bind(cmdshift, "T", function() application.launchOrFocus("iTerm") end)
 	hotkey.bind(cmdshift, "A", function() application.launchOrFocus("Alfred 2") end)
 	hotkey.bind(cmdshift, 'N', function() loadItermProfile() end)
+	hotkey.bind(cmdshift, 'J', function() loadItermProfileLocal() end)
 	hotkey.bind(mashshift, "R", hs.reload)
+
+-- Applications Interaction (not from hammerspoon)
+-- mashshift + P: Start Pomodoro (stop notifications + rescuetime + timer)
+-- mashshift + C: See world clock + calendar
+-- cmd + spacebar: Alfred
+-- option + spacebar: FullContact
 
 -- Key bindings ===============================================
 	hotkey.bind(mashshift, 'F', function() applyLayout(work_layout) end)
 	hotkey.bind(mashshift, 'D', function() launchApp(work_layout) end)
 	hotkey.bind(mashshift, 'G', function() reloadScreens() end)
 
-	hotkey.bind(mashshift, ';', saveFocus)
-	hotkey.bind(mashshift, "'", focusSaved)
+	-- hotkey.bind(mashshift, ';', saveFocus)
+	-- hotkey.bind(mashshift, "'", focusSaved)
 
 	hotkey.bind(mashshift, 'left', gridset(goleft))
 	hotkey.bind(mashshift, 'right', gridset(goright))
