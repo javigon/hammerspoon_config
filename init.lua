@@ -38,6 +38,7 @@ local altshift = {"alt", "shift"}
 
 --Watcherts and internal objects ==============================
 local hsConfigFileWatcher = nil
+local pomodoroOn = 0 -- 0:off, 1:on, 2:pause
 
 -- Internal operations ========================================
 local gridset = function(frame)
@@ -96,6 +97,47 @@ function loadItermProfileLocal()
 		)
 end
 
+function startFocusTime()
+
+	if pomodoroOn == 0 then
+		applescript.applescript([[
+			tell application "Pomodoro Timer"
+				tell application "System Events"
+					tell process "Pomodoro Timer"
+						click button "START" of window 1
+					end tell
+				end tell
+			end tell
+		]])
+
+		pomodoroOn = 1
+	elseif pomodoroOn == 1 then
+		applescript.applescript([[
+			tell application "Pomodoro Timer"
+				tell application "System Events"
+					tell process "Pomodoro Timer"
+						click button "PAUSE" of window 1
+					end tell
+				end tell
+			end tell
+		]])
+
+		pomodoroOn = 2
+	else
+		applescript.applescript([[
+			tell application "Pomodoro Timer"
+				tell application "System Events"
+					tell process "Pomodoro Timer"
+						click button "RESUME" of window 1
+					end tell
+				end tell
+			end tell
+		]])
+
+		pomodoroOn = 1
+	end
+end
+
 -- Automatic Operations =======================================
 -- hsConfigFileWatcher = hs.pathwatcher.new(os.getenv("HOME") .. "/.", reloadConfig)
 -- hsConfigFileWatcher:start()
@@ -111,6 +153,7 @@ defineLayout()
 	hotkey.bind(cmdshift, 'N', function() loadItermProfile() end)
 	hotkey.bind(cmdshift, 'J', function() loadItermProfileLocal() end)
 	hotkey.bind(mashshift, "R", hs.reload)
+	hotkey.bind(mashshift, "P", function() startFocusTime() end)
 
 -- Applications Interaction (not from hammerspoon)
 -- mashshift + P: Start Pomodoro (stop notifications + rescuetime + timer)
