@@ -83,8 +83,14 @@ end
 
 function loadItermProfile()
 	applescript.applescript(
-		"tell application \"iTerm\" \
-		create window with profile \"uHalley\" \
+		"set theIP to (do shell script \"ifconfig | grep inet | grep -v inet6 | cut -d' ' -f2\") \
+		set theLocalNode to the last word of theIP \
+		tell application \"iTerm3\" \
+			if (theLocalNode is equal to \"192.168.1.24\") then \
+				create window with profile \"huHalley\" \
+			else \
+				create window with profile \"uHalley\" \
+			end if \
 		end tell"
 		)
 end
@@ -98,9 +104,41 @@ function loadItermProfileLocal()
 end
 
 function startFocusTime()
-
+	-- Pomodoro Timer + RescueTime + Calendar. Each pomodoro is 45 minutes.
+	-- Notifications are disabled on the side using the same shortcut...
 	if pomodoroOn == 0 then
+		-- Calendar
 		applescript.applescript([[
+			set eventName to the text returned of (display dialog "Event Name" default answer "")
+			tell application "Calendar"
+				tell calendar "Work"
+					set pomodoro to current date
+					make new event at end with properties {description:"Event Decription", summary:eventName, start date:pomodoro, end date:pomodoro + 45 * minutes}
+				end tell
+			end tell
+		]])
+
+		-- RescueTime
+		applescript.applescript([[
+			ignoring application responses
+			tell application "RescueTime"
+			tell application "System Events"
+				tell process "RescueTime"
+					tell (menu bar item 1 of menu bar 2)
+						click
+						click menu item "Get Focused..." of menu 1
+					end tell
+
+				keystroke "45"
+				keystroke return
+				end tell
+			end tell
+			end tell
+			end ignoring
+		]])
+
+		-- Pomodoro Timer
+		ret = applescript.applescript([[
 			tell application "Pomodoro Timer"
 				tell application "System Events"
 					tell process "Pomodoro Timer"
@@ -110,7 +148,7 @@ function startFocusTime()
 			end tell
 		]])
 
-		pomodoroOn = 1
+		-- pomodoroOn = 1
 	elseif pomodoroOn == 1 then
 		applescript.applescript([[
 			tell application "Pomodoro Timer"
@@ -138,6 +176,13 @@ function startFocusTime()
 	end
 end
 
+function test()
+	myvar = "test"
+	applescript.applescript([[
+		display dialog 'myvar'
+	]])
+end
+
 -- Automatic Operations =======================================
 -- hsConfigFileWatcher = hs.pathwatcher.new(os.getenv("HOME") .. "/.", reloadConfig)
 -- hsConfigFileWatcher:start()
@@ -154,6 +199,7 @@ defineLayout()
 	hotkey.bind(cmdshift, 'J', function() loadItermProfileLocal() end)
 	hotkey.bind(mashshift, "R", hs.reload)
 	hotkey.bind(mashshift, "P", function() startFocusTime() end)
+	-- hotkey.bind(mashshift, "P", function() test() end)
 
 -- Applications Interaction (not from hammerspoon)
 -- mashshift + P: Start Pomodoro (stop notifications + rescuetime + timer)
