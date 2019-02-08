@@ -198,7 +198,7 @@ defineLayout()
 	hotkey.bind(cmdshift, 'N', function() loadItermProfile() end)
 	hotkey.bind(cmdshift, 'J', function() loadItermProfileLocal() end)
 	hotkey.bind(mashshift, "R", hs.reload)
-	hotkey.bind(mashshift, "P", function() startFocusTime() end)
+	-- hotkey.bind(mashshift, "P", function() startFocusTime() end)
 	-- hotkey.bind(mashshift, "P", function() test() end)
 
 -- Applications Interaction (not from hammerspoon)

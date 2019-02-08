@@ -21,8 +21,6 @@ work_layout = {}
 
 -- 1 screen
 communication_layout_1 = {
-	{"Calendar", nil, display_primary, goupleft},
-	{"Skype", nil, display_primary, godownleft},
 	{"Mail", nil, display_primary, gobig},
 	{"Slack", nil, display_primary, godownright},
 }
@@ -37,19 +35,20 @@ communication_layout_2 = {
 	{"Calendar", nil, display_secondary, goupleft},
 	{"Skype", nil, display_secondary, godownleft},
 	{"Mail", nil, display_secondary, goright},
-	{"Slack", nil, display_primary, godownright_omnifocus},
-	{"Adium", "Contacts", display_primary, goupright_adium_contact},
-	{"Adium", "Timeline", display_primary, goupright_adium_chat},
-	{"Evernote", nil, display_secondary, gobig},
-	{"Spotify", nil, display_primary, gobig},
+--	{"Slack", nil, display_primary, godownright_omnifocus},
+--	{"Adium", "Contacts", display_primary, goupright_adium_contact},
+--	{"Adium", "Timeline", display_primary, goupright_adium_chat},
+--	{"Spotify", nil, display_primary, gobig},
 	{"RescueTime", nil, display_primary, gomiddle},
-	{"Leaf", nil, display_primary, gomiddle},
+	{"Reeder", nil, display_primary, godownright_omnifocus},
 }
 
 productivity_layout_2 = {
 	{"OmniFocus", nil, display_primary, goleft_omnifocus},
+	{"Evernote", nil, display_primary, goupright_omnifocus},
 	{"RescueTime", nil, display_primary, gomiddle},
-	{"Pomodoro Timer", nil, display_primary, gomiddle},
+	{"Be Focused Pro", nil, display_primary, gomiddle},
+	{"Timeular", "Time Tracking", display_primary, gomiddle},
 }
 
 function defineLayout()

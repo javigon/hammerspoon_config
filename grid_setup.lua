@@ -31,6 +31,7 @@ gobig = {x = 0, y = 0, w = gw, h = gh}
 -- Custom positions
 goupright_adium_contact = {x = gw/2 + (gw/2 - gw/2.2) , y = 0 , w = gw/10, h = gh/2}
 goupright_adium_chat = {x = gw/2 + (gw/2 - gw/2.2) + gw/10 , y = 0 , w = gw/2.2 - gw/10, h = gh/2}
+goupright_omnifocus = {x = gw/2 + (gw/2 - gw/2.2) , y = 0 , w = gw/2.2, h = gh/2}
 godownright_omnifocus = {x = gw/2 + (gw/2 - gw/2.2) , y = gh/2 , w = gw/2.2, h = gh/2}
 goleft_omnifocus = {x = 0, y = 0, w = gw/2 + (gw/2 - gw/2.2) , h = gh}
 
