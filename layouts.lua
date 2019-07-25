@@ -31,24 +31,39 @@ productivity_layout_1 = {
 }
 
 -- 2 screens
-communication_layout_2 = {
-	{"Calendar", nil, display_secondary, goupleft},
-	{"Skype", nil, display_secondary, godownleft},
-	{"Mail", nil, display_secondary, goright},
+--communication_layout_2 = {
+--	{"Calendar", nil, display_secondary, goupleft},
+--	{"Skype", nil, display_secondary, godownleft},
+--	{"Mail", nil, display_secondary, goright},
 --	{"Slack", nil, display_primary, godownright_omnifocus},
 --	{"Adium", "Contacts", display_primary, goupright_adium_contact},
 --	{"Adium", "Timeline", display_primary, goupright_adium_chat},
 --	{"Spotify", nil, display_primary, gobig},
-	{"RescueTime", nil, display_primary, gomiddle},
-	{"Reeder", nil, display_primary, godownright_omnifocus},
+--	{"RescueTime", nil, display_primary, gomiddle},
+--	{"Reeder", nil, display_primary, godownright_omnifocus},
+--}
+
+--productivity_layout_2 = {
+--	{"OmniFocus", nil, display_primary, goleft_omnifocus},
+--	{"Evernote", nil, display_primary, goupright_omnifocus},
+--	{"RescueTime", nil, display_primary, gomiddle},
+--	{"Be Focused Pro", nil, display_primary, gomiddle},
+--	{"Timeular", "Time Tracking", display_primary, gomiddle},
+--}
+
+-- 2 screens with widescreen
+communication_layout_2 = {
+	{"Calendar", nil, display_secondary, gobig},
+	{"Mail", nil, display_primary, goleftw},
+	{"Skype", nil, display_primary, godownrightw_of},
+	{"Reeder", nil, display_secondary, gobig},
 }
 
 productivity_layout_2 = {
-	{"OmniFocus", nil, display_primary, goleft_omnifocus},
-	{"Evernote", nil, display_primary, goupright_omnifocus},
+	{"OmniFocus", nil, display_primary, gomiddlew_of},
+	{"Evernote", nil, display_primary, gouprightw_of},
 	{"RescueTime", nil, display_primary, gomiddle},
 	{"Be Focused Pro", nil, display_primary, gomiddle},
-	{"Timeular", "Time Tracking", display_primary, gomiddle},
 }
 
 function defineLayout()

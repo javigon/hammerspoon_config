@@ -194,7 +194,7 @@ defineLayout()
 
 -- Launch Applications ========================================
 	hotkey.bind(cmdshift, "T", function() application.launchOrFocus("iTerm") end)
-	hotkey.bind(cmdshift, "A", function() application.launchOrFocus("Alfred 2") end)
+	hotkey.bind(cmdshift, "A", function() application.launchOrFocus("Alfred 3") end)
 	hotkey.bind(cmdshift, 'N', function() loadItermProfile() end)
 	hotkey.bind(cmdshift, 'J', function() loadItermProfileLocal() end)
 	hotkey.bind(mashshift, "R", hs.reload)
@@ -225,7 +225,7 @@ defineLayout()
 	hotkey.bind(cmdshift, 'left',  gridset(godownleft))
 	hotkey.bind(cmdshift, 'right', gridset(godownright))
 
-	hotkey.bind(mashshift, 'M', gridset(gomiddle))
+	hotkey.bind(mashshift, 'M', gridset(gocenterw))
 
 	hotkey.bind(mashshift, 'J', grid.pushWindowDown)
 	hotkey.bind(mashshift, 'K', grid.pushWindowUp)
