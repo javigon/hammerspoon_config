@@ -29,7 +29,7 @@ godown = {x = 0, y = gh/2, w = gw, h = gh/2}
 gobig = {x = 0, y = 0, w = gw, h = gh}
 
 -- Widescreen positions
-gocenterw = {x = 2, y = 2, w = 4, h = 5}
+gocenterw = {x = 2, y = 1, w = 4, h = 5}
 goleftw = {x = 0, y = 0, w = gw/3, h = gh}
 gomiddlew = {x = gw/3, y = 0, w = gw/3, h = gh}
 gouprightw = {x = 2*gw/3, y = 0, w = gw/3, h = gh/2}
@@ -38,6 +38,7 @@ godownrightw = {x = 2*gw/3, y = gh/2, w = gw/3, h = gh/2}
 gomiddlew_of = {x = gw/3, y = 0, w = 1.2*gw/3, h = gh}
 gouprightw_of = {x = 2.2*gw/3, y = 0, w = 0.8*gw/3, h = gh/2}
 godownrightw_of = {x = 2.2*gw/3, y = gh/2, w = 0.8*gw/3, h = gh/2}
+gorightw_of = {x = 2.2*gw/3, y = 0, w = 0.8*gw/3, h = gh}
 
 -- Custom positions
 goupright_adium_contact = {x = gw/2 + (gw/2 - gw/2.2) , y = 0 , w = gw/10, h = gh/2}

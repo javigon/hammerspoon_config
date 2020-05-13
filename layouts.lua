@@ -54,14 +54,13 @@ productivity_layout_1 = {
 -- 2 screens with widescreen
 communication_layout_2 = {
 	{"Calendar", nil, display_secondary, gobig},
-	{"Mail", nil, display_primary, goleftw},
-	{"Skype", nil, display_primary, godownrightw_of},
+	{"iTerm2", nil, display_primary, goleftw},
 	{"Reeder", nil, display_secondary, gobig},
 }
 
 productivity_layout_2 = {
 	{"OmniFocus", nil, display_primary, gomiddlew_of},
-	{"Evernote", nil, display_primary, gouprightw_of},
+	{"Evernote", nil, display_primary, gorightw_of},
 	{"RescueTime", nil, display_primary, gomiddle},
 	{"Be Focused Pro", nil, display_primary, gomiddle},
 }

@@ -87,7 +87,7 @@ function loadItermProfile()
 		set theLocalNode to the last word of theIP \
 		tell application \"iTerm3\" \
 			if (theLocalNode is equal to \"192.168.1.24\") then \
-				create window with profile \"huHalley\" \
+				create window with profile \"uHalley\" \
 			else \
 				create window with profile \"uHalley\" \
 			end if \
@@ -194,7 +194,8 @@ defineLayout()
 
 -- Launch Applications ========================================
 	hotkey.bind(cmdshift, "T", function() application.launchOrFocus("iTerm") end)
-	hotkey.bind(cmdshift, "A", function() application.launchOrFocus("Alfred 3") end)
+	hotkey.bind(mashshift, "A", function() application.launchOrFocus("Alfred 3") end)
+	hotkey.bind(cmdshift, "B", function() application.launchOrFocus("Brave Browser") end)
 	hotkey.bind(cmdshift, 'N', function() loadItermProfile() end)
 	hotkey.bind(cmdshift, 'J', function() loadItermProfileLocal() end)
 	hotkey.bind(mashshift, "R", hs.reload)
