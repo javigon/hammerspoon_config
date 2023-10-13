@@ -29,7 +29,7 @@ godown = {x = 0, y = gh/2, w = gw, h = gh/2}
 gobig = {x = 0, y = 0, w = gw, h = gh}
 
 -- Widescreen positions
-gocenterw = {x = 2, y = 1, w = 4, h = 5}
+gocenterw = {x = 1, y = 0.5, w = 6, h = 7}
 goleftw = {x = 0, y = 0, w = gw/3, h = gh}
 gomiddlew = {x = gw/3, y = 0, w = gw/3, h = gh}
 gouprightw = {x = 2*gw/3, y = 0, w = gw/3, h = gh/2}
